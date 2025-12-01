@@ -2,7 +2,8 @@ import argparse
 import yaml
 
 LANGUAGES = [
-    "amh", "arq", "ary", "hau", "ibo", "kin", "orm", "pcm", "som", "swa", "tir", "twi", "xho", "yor", "zul"
+    "amh", "arq", "ary", "hau", "ibo", "kin", "orm", "pcm", "som",
+    "swa", "tir", "twi", "xho", "yor", "zul"
 ]
 
 def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
@@ -27,12 +28,9 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
                         "metric_list": [
                             {
                                 "metric": "acc",
+                                "aggregation": "mean",
                                 "higher_is_better": True,
-                            },
-                            {
-                                "metric": "macro_f1",
-                                "higher_is_better": True,
-                            },
+                            }
                         ],
                     },
                     f,
@@ -43,8 +41,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
 
     if err:
         raise FileExistsError(
-            "Files already exist (use --overwrite): "
-            + ", ".join(err)
+            "Files already exist (use --overwrite): " + ", ".join(err)
         )
 
     multilingual_file_name = "afrihate_multilingual_balanced_hate.yaml"
@@ -67,12 +64,9 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
                     "metric_list": [
                         {
                             "metric": "acc",
+                            "aggregation": "mean",
                             "higher_is_better": True,
-                        },
-                        {
-                            "metric": "macro_f1",
-                            "higher_is_better": True,
-                        },
+                        }
                     ],
                 },
                 f,
