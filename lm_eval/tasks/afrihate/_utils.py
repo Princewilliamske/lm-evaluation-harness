@@ -34,7 +34,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
             "dataset_name": lang,
             "output_type": "multiple_choice",
             "test_split": "test",
-            "doc_to_text": "Tweet: {{text}}\nClassify as normal, abusive, or hate:\n",
+            "doc_to_text":"{{doc.tweet}}", # Map 'tweet' column to model input,
             "doc_to_choice": ["normal", "abusive", "hate"],
             "doc_to_target": (
                 '{{ "normal" if "normal" in label.lower() or "neutral" in label.lower() '
@@ -68,7 +68,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
         "dataset_path": "lm_eval/tasks/afrihate/afrihate_all_hate",  # Updated path
         "dataset_name": None,
         "test_split": "test",
-        "doc_to_text": "Tweet: {{text}}\nClassify as normal, abusive, or hate:\n",
+        "doc_to_text": "{{doc.tweet}}", # Map 'tweet' column to model input,
         "doc_to_choice": ["normal", "abusive", "hate"],
         "doc_to_target": (
             '{{ "normal" if "normal" in label.lower() or "neutral" in label.lower() '
