@@ -33,7 +33,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
             "dataset_path": "afrihate/afrihate",
             "dataset_name": lang,
             "output_type": "multiple_choice",
-            "eval_split": "test",
+            "test_split": "test",
             "doc_to_text": "Tweet: {{tweet}}\nClassify as normal, abusive, or hate:\n",
             "doc_to_choice": ["normal", "abusive", "hate"],
             "doc_to_target": (
@@ -67,7 +67,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
         "tag": "afrihate_all_languages",
         "dataset_path": "lm_eval/tasks/afrihate/afrihate_all_hate",  # Updated path
         "dataset_name": None,
-        "eval_split": "test",
+        "test_split": "test",
         "doc_to_text": "Tweet: {{tweet}}\nClassify as normal, abusive, or hate:\n",
         "doc_to_choice": ["normal", "abusive", "hate"],
         "doc_to_target": (

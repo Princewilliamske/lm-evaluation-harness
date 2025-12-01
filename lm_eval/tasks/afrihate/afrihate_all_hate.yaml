@@ -13,7 +13,6 @@ doc_to_text: 'Tweet: {{tweet}}
   Classify as normal, abusive, or hate:
 
   '
-eval_split: test
 include:
 - afrihate_amh_hate.yaml
 - afrihate_arq_hate.yaml
@@ -54,3 +53,4 @@ metric_list:
   metric: acc
 tag: afrihate_all_languages
 task: afrihate_all_hate
+test_split: test
