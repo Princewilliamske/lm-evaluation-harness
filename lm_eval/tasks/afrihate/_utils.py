@@ -29,7 +29,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
             "dataset_path": "afrihate/afrihate",
             "dataset_name": lang,
             "output_type": "multiple_choice",
-            "eval_split": "test",
+            "test_split": "test",
             "doc_to_text": "Tweet: {{tweet}}\nClassify as normal, abusive, or hate:\n",
             "doc_to_choice": ["normal", "abusive", "hate"],
             "doc_to_target": (
@@ -64,7 +64,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
         "dataset_path": "lm_eval/tasks/afrihate/afrihate_all_hate",
         "dataset_name": None,
         "output_type": "multiple_choice",
-        "eval_split": "test",
+        "test_split": "test",
         "doc_to_text": "Tweet: {{tweet}}\nClassify as normal, abusive, or hate:\n",
         "doc_to_choice": ["normal", "abusive", "hate"],
         "doc_to_target": (
@@ -91,6 +91,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
 
     print(f"Generated afrihate_all_hate.yaml")
 
+
 def main() -> None:
     """Parse CLI args and generate YAMLs."""
     parser = argparse.ArgumentParser()
@@ -98,6 +99,7 @@ def main() -> None:
     parser.add_argument("--output-dir", default=".", help="Directory to write YAML files")
     args = parser.parse_args()
     gen_lang_yamls(output_dir=args.output_dir, overwrite=args.overwrite)
+
 
 if __name__ == "__main__":
     main()

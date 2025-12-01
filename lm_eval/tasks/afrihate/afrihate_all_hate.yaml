@@ -13,7 +13,6 @@ doc_to_text: 'Tweet: {{tweet}}
   Classify as normal, abusive, or hate:
 
   '
-eval_split: test
 metadata:
   description: Merged multilingual dataset covering all 15 AfriHate languages
   languages:
@@ -38,3 +37,4 @@ metric_list:
   metric: acc
 output_type: multiple_choice
 task: afrihate_all_hate
+test_split: test
