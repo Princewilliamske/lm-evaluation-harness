@@ -63,9 +63,9 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
         return
 
     multilingual_yaml = {
-        "task": "afrihate_all_hate",  # updated task name
+        "task": "afrihate_all_hate",
         "tag": "afrihate_all_languages",
-        "dataset_path": "afrihate_multilingual_balanced_hate",  # merged dataset folder
+        "dataset_path": "lm_eval/tasks/afrihate/afrihate_all_hate",  # Updated path
         "dataset_name": None,
         "eval_split": "test",
         "doc_to_text": "Tweet: {{tweet}}\nClassify as normal, abusive, or hate:\n",
