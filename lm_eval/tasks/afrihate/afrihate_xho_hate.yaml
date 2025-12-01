@@ -13,10 +13,10 @@ doc_to_text: 'Tweet: {{tweet}}
   Classify as normal, abusive, or hate:
 
   '
+eval_split: test
 metric_list:
 - aggregation: mean
   higher_is_better: true
   metric: acc
 output_type: multiple_choice
 task: afrihate_xho_hate
-test_split: test
