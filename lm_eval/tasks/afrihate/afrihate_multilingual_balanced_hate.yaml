@@ -37,7 +37,7 @@ metric_list:
 - aggregation: mean
   higher_is_better: true
   metric: acc
-- aggregation: macro_f1
+- aggregation: mean
   higher_is_better: true
   metric: f1
 tag: afrihate_all_languages
