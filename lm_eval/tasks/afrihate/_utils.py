@@ -21,7 +21,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
                         "dataset_path": "afrihate/afrihate",
                         "dataset_name": lang,
                         "output_type": "multiple_choice",
-                        "eval_split": "test",
+                        "eval_split": "test",  # Explicitly added
                         "doc_to_text": "Tweet: {{tweet}}\nClassify as normal, abusive, or hate:\n",
                         "doc_to_choice": ["normal", "abusive", "hate"],
                         "doc_to_target": '{{ "normal" if "normal" in label.lower() or "neutral" in label.lower() else "abusive" if "abuse" in label.lower() or "offensive" in label.lower() else "hate" }}',
@@ -58,6 +58,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
                     "include": include_files,
                     "task": "afrihate_multilingual_balanced_hate",
                     "tag": "afrihate_all_languages",
+                    "eval_split": "test",  # Explicitly added for multilingual
                     "metadata": {
                         "description": "Balanced multilingual AfriHate task across 15 African languages.",
                         "languages": LANGUAGES,
