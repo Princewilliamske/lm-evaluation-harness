@@ -10,12 +10,10 @@ doc_to_target: '{{ "normal" if "normal" in label.lower() or "neutral" in label.l
   "hate" }}'
 doc_to_text: 'Tweet: {{tweet}}\nClassify as normal, abusive, or hate:\n'
 metric_list:
-- aggregation: mean
-  higher_is_better: true
+- higher_is_better: true
   metric: acc
-- aggregation: mean
-  higher_is_better: true
-  metric: f1
+- higher_is_better: true
+  metric: macro_f1
 output_type: multiple_choice
 task: afrihate_hau_hate
 test_split: test
