@@ -20,11 +20,11 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
                         "task": f"afrihate_{lang}_hate",
                         "dataset_path": "afrihate/afrihate",
                         "dataset_name": lang,
-                        "test_split": "test",
                         "output_type": "multiple_choice",
-                        "doc_to_text": "Tweet: {{tweet}}\\nClassify as normal, abusive, or hate:\\n",
+                        "eval_split": "test",
+                        "doc_to_text": "Tweet: {{tweet}}\nClassify as normal, abusive, or hate:\n",
                         "doc_to_choice": ["normal", "abusive", "hate"],
-                        "doc_to_target": "{{ \"normal\" if \"normal\" in label.lower() or \"neutral\" in label.lower() else \"abusive\" if \"abuse\" in label.lower() or \"offensive\" in label.lower() else \"hate\" }}",
+                        "doc_to_target": '{{ "normal" if "normal" in label.lower() or "neutral" in label.lower() else "abusive" if "abuse" in label.lower() or "offensive" in label.lower() else "hate" }}',
                         "metric_list": [
                             {
                                 "metric": "acc",
@@ -44,6 +44,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
             "Files already exist (use --overwrite): " + ", ".join(err)
         )
 
+    # Generate multilingual YAML
     multilingual_file_name = "afrihate_multilingual_balanced_hate.yaml"
     include_files = [f"afrihate_{lang}_hate.yaml" for lang in LANGUAGES]
 
