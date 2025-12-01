@@ -55,7 +55,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
             yaml.dump(
                 {
                     "include": include_files,
-                    "task": "afrihate_all_hate",
+                    "task": "afrihate_a_hate",
                     "tag": "afrihate_all_languages",
                     "metadata": {
                         "description": "Balanced multilingual AfriHate task across 15 African languages.",
