@@ -45,7 +45,7 @@ def gen_lang_yamls(output_dir: str, overwrite: bool) -> None:
                             },
                             {
                                 "metric": "f1",
-                                "aggregation": "macro_f1",
+                                "aggregation": "mean",
                                 "higher_is_better": True,
                             },
                         ],
